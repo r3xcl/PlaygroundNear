@@ -8,18 +8,18 @@ import android.animation.ValueAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class SplashActivity extends AppCompatActivity {
 
-    ImageView iv_house,iv_beat;
+    ImageView iv_logo;
     TextView splash_text;
 
     CharSequence charSequence;
 
-    int index;
-    long delay = 200;
     Handler handler=new Handler();
 
     @Override
@@ -29,24 +29,12 @@ public class SplashActivity extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
-        iv_house = (ImageView)findViewById(R.id.iv_house);
-        iv_beat = (ImageView)findViewById(R.id.iv_beat);
+        iv_logo = (ImageView)findViewById(R.id.iv_logo);
         splash_text = (TextView) findViewById(R.id.splash_text);
 
 
-        ObjectAnimator objectAnimator1 = ObjectAnimator.ofPropertyValuesHolder
-                (iv_house,
-                        PropertyValuesHolder.ofFloat("scaleX",1.2f),
-                        PropertyValuesHolder.ofFloat("scaleY",1.2f));
-
-        objectAnimator1.setDuration(500);
-        objectAnimator1.setRepeatCount(ValueAnimator.INFINITE);
-        objectAnimator1.setRepeatMode(ValueAnimator.REVERSE);
-
-        objectAnimator1.start();
-
-        animatText("ПЛОЩАДКИ РЯДОМ");
-
+        Animation animation = AnimationUtils.loadAnimation(this,R.anim.animation_splash);
+        iv_logo.startAnimation(animation);
 
 
         new Handler().postDelayed(new Runnable() {
@@ -57,32 +45,9 @@ public class SplashActivity extends AppCompatActivity {
                 finish();
 
             }
-        },4000);
+        },3100);
 
 
-    }
-
-    Runnable runnable = new Runnable() {
-        @Override
-        public void run() {
-            splash_text.setText(charSequence.subSequence(0,index++));
-
-            if (index <= charSequence.length()){
-                handler.postDelayed(runnable,delay);
-            }
-        }
-    };
-
-    public void animatText(CharSequence cs){
-        charSequence = cs;
-
-        index = 0 ;
-
-        splash_text.setText("");
-
-        handler.removeCallbacks(runnable);
-
-        handler.postDelayed(runnable,delay);
     }
 
 }
