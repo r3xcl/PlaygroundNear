@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "665047902413",
+    "project_id": "playgroundnear-7f945",
+    "storage_bucket": "playgroundnear-7f945.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:665047902413:android:85ef64485131d54969e184",
+        "android_client_info": {
+          "package_name": "com.r3xcl.playgroundnear"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "665047902413-dpegpjmirfmpd1bvtoerv9uhj9fmf42h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.r3xcl.playgroundnear",
+            "certificate_hash": "64af0aa6c37a71db8c9c88e3efc2a615839289e0"
+          }
+        },
+        {
+          "client_id": "665047902413-4flou159vl2rn8thk8a8maag2frrpubg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnwPiOUBRVYuHxta_8s8Kk8dvzEUSC7SE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "665047902413-4flou159vl2rn8thk8a8maag2frrpubg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

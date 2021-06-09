@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#1bcf0a</color>
     <color name="color_nav_bar">#F8D132</color>
+    <color name="bar_color">#dedddb</color>
+    <color name="color_nav_but">#635414</color>
 </resources>

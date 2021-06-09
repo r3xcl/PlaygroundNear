@@ -5,7 +5,7 @@
     <item
         android:title="Настройки"
         android:icon="@drawable/ic_settings"
-        android:id="@+id/settingsFragment"/>
+        android:id="@+id/settings"/>
 
     <item
         android:title="Карта"
@@ -15,5 +15,5 @@
     <item
         android:title="Аккаунт"
         android:icon="@drawable/ic_person"
-        android:id="@+id/personFragment"/>
+        android:id="@+id/person"/>
 </menu>

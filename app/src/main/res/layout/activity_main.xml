@@ -15,19 +15,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_menu"
-        app:itemTextColor="@color/white"
-        />
+        app:itemIconTint="@color/color_nav_but"
+        app:itemTextColor="@color/color_nav_but"/>
 
-    <fragment
-        android:id="@+id/nav_host_fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/nav_graph" />
+        android:text="MAP"
+        android:textSize="25pt"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
