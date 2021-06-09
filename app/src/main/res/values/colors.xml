@@ -11,4 +11,5 @@
     <color name="color_nav_bar">#F8D132</color>
     <color name="bar_color">#dedddb</color>
     <color name="color_nav_but">#635414</color>
+    <color name="back_auth">#aab4b7</color>
 </resources>
