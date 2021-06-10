@@ -24,6 +24,4 @@
         android:text="MAP"
         android:textSize="25pt"/>
 
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
