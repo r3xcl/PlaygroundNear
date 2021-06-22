@@ -12,9 +12,9 @@
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="339dp"
-        android:src="@drawable/ic_auth_background"
-        android:background="@drawable/auth_photo_border"
         />
+
+
 
     <ImageView
         android:id="@+id/imageView3"
@@ -36,11 +36,28 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10pt"
+        android:layout_marginEnd="10pt"
         android:backgroundTint="@color/color_nav_bar"
         android:src="@drawable/ic_arrow_right"
         app:layout_constraintEnd_toEndOf="@+id/panel"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"/>
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        tools:targetApi="lollipop" />
+
+    <EditText
+        android:id="@+id/input_number"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="20pt"
+        android:paddingStart="8pt"
+        android:textSize="20sp"
+        android:hint="@string/inputnum"
+        android:drawablePadding="12dp"
+        android:background="@drawable/custom_edittext"
+        android:drawableStart="@drawable/custom_call_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fab"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
