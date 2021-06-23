@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AuthActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:background="@drawable/authback"
+        />
+
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="305dp"
+        />
+
+    <ImageView
+        android:id="@+id/panel"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/auth_rounded_corners"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:maxImageSize="29pt"
+        android:layout_marginEnd="10pt"
+        android:backgroundTint="@color/color_nav_bar"
+        android:src="@drawable/ic_arrow_right"
+        app:layout_constraintEnd_toEndOf="@+id/panel"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        tools:targetApi="lollipop" />
+
+    <ImageView
+        android:id="@+id/phone"
+        android:layout_width="60pt"
+        android:layout_height="60pt"
+        android:layout_marginTop="10pt"
+        android:background="@drawable/ic_phone"
+        android:drawableStart="@drawable/custom_call_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fab_next" />
+
+    <ImageView
+        android:id="@+id/ver_code"
+        android:layout_width="60pt"
+        android:layout_height="60pt"
+        android:layout_marginTop="10pt"
+        android:background="@drawable/ic_ver_code"
+        android:visibility="invisible"
+        android:drawableStart="@drawable/custom_call_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fab_next" />
+
+    <EditText
+        android:id="@+id/input_number"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="20pt"
+        android:background="@drawable/custom_edittext"
+        android:drawableStart="@drawable/custom_call_icon"
+        android:drawablePadding="12dp"
+        android:hint="@string/inputnum"
+        android:inputType="number"
+        android:paddingStart="8pt"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone" />
+
+    <EditText
+        android:id="@+id/input_code"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="20pt"
+        android:background="@drawable/custom_edittext"
+        android:textAlignment="center"
+        android:hint="@string/inputcode"
+        android:inputType="number"
+        android:visibility="invisible"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone" />
+
+    <TextView
+        android:id="@+id/resend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Отправить код еще раз"
+        android:textSize="8pt"
+        android:visibility="invisible"
+        android:layout_marginTop="2pt"
+        android:layout_marginEnd="25pt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_number" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
