@@ -42,7 +42,7 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
     FloatingActionButton fab_next;
     ImageView phone,ver_code;
     EditText input_number,input_code;
-    TextView resend;
+    TextView resend,textviewnumber,textviewcode;
     String phonenum = "";
     String code = "";
 
@@ -60,6 +60,8 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
         input_number = findViewById(R.id.input_number);
         input_code = findViewById(R.id.input_code);
         resend = findViewById(R.id.resend);
+        textviewnumber = findViewById(R.id.textviewnumber);
+        textviewcode = findViewById(R.id.textviewcode);
 
         window = this.getWindow();
         window.setStatusBarColor(this.getResources().getColor(R.color.bar_auth));
@@ -97,9 +99,11 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
 
                     phone.setVisibility(View.INVISIBLE);
                     input_number.setVisibility(View.INVISIBLE);
+                    textviewnumber.setVisibility(View.INVISIBLE);
                     ver_code.setVisibility(View.VISIBLE);
                     input_code.setVisibility(View.VISIBLE);
                     resend.setVisibility(View.VISIBLE);
+                    textviewcode.setVisibility(View.VISIBLE);
 
                     startPhoneVer(phonenum);
                 }
@@ -113,10 +117,6 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
                 if(ver_code.getVisibility() == View.VISIBLE && !code.isEmpty()){
 
                     verPhoneNum(mVerId,code);
-                }
-                else if(ver_code.getVisibility() == View.VISIBLE && code.isEmpty()) {
-
-                    Toast.makeText(AuthActivity.this,"Введите код!",Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -147,12 +147,13 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
             public void onSuccess(AuthResult authResult) {
                 Toast.makeText(AuthActivity.this,"Вход выполнен успешно!",Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(AuthActivity.this,PersonActivity.class);
+                finish();
                 startActivityForResult(intent,1);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-
+                Toast.makeText(AuthActivity.this,"Неверный код!",Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -168,6 +169,8 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
                 .build();
 
         PhoneAuthProvider.verifyPhoneNumber(options);
+
+        Toast.makeText(AuthActivity.this,"Код отправлен!",Toast.LENGTH_SHORT).show();
     }
 
     private void startPhoneVer(String phonenum) {

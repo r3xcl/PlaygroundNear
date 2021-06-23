@@ -12,16 +12,19 @@
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
         android:layout_height="360dp"
-        android:background="@drawable/authback"
-        />
-
+        android:background="@drawable/ic_auth_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="match_parent"
         android:layout_height="305dp"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/panel"
@@ -68,7 +71,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fab_next" />
 
-    <EditText
+    <TextView
+        android:id="@+id/textviewnumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Введите номер телефона:"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone" />
+
+    <TextView
+        android:id="@+id/textviewcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Введите код:"
+        android:visibility="invisible"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone" />
+
+    <com.santalu.maskara.widget.MaskEditText
         android:id="@+id/input_number"
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -77,8 +101,9 @@
         android:drawableStart="@drawable/custom_call_icon"
         android:drawablePadding="12dp"
         android:hint="@string/inputnum"
-        android:inputType="number"
         android:paddingStart="8pt"
+        app:mask="+38__________"
+        android:inputType="number"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
