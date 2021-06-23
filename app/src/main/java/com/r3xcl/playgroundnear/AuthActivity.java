@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
@@ -65,6 +66,7 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
         sharedPreferences = getSharedPreferences(SharedPrefName,Context.MODE_PRIVATE);
 
         fab_next = findViewById(R.id.fab_next);
+        fab_next.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.color_nav_bar)));
         phone = findViewById(R.id.phone);
         ver_code = findViewById(R.id.ver_code);
         input_number = findViewById(R.id.input_number);

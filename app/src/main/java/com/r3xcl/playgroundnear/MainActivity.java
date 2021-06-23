@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -17,11 +18,13 @@ import android.view.WindowManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, BottomNavigationView.OnNavigationItemSelectedListener {
 
     BottomNavigationView bottomNavigationView;
     Window window;
+    FloatingActionButton fab_add_court;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -33,6 +36,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
+
+        bottomNavigationView.setBackground(null);
+        bottomNavigationView.getMenu().getItem(1).setEnabled(false);
+
+        fab_add_court = findViewById(R.id.fab_add_court);
+        fab_add_court.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.white)));
 
         window = this.getWindow();
         window.setStatusBarColor(this.getResources().getColor(R.color.bar_color));

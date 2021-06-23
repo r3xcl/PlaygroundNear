@@ -8,8 +8,6 @@
         android:id="@+id/settings"/>
 
     <item
-        android:title="Карта"
-        android:icon="@drawable/ic_map"
         android:id="@+id/homeFragment"/>
 
     <item
