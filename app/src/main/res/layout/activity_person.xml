@@ -90,13 +90,25 @@
         android:layout_margin="20pt"
         android:background="@drawable/custom_edittext"
         android:textAlignment="center"
-        android:hint="@string/inputnum"
+        android:hint="@string/inputcode"
         android:inputType="text"
         android:visibility="invisible"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phone" />
+
+    <TextView
+        android:id="@+id/resend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Отправить код еще раз"
+        android:textSize="8pt"
+        android:visibility="invisible"
+        android:layout_marginTop="2pt"
+        android:layout_marginEnd="25pt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_number" />
 
 
 
