@@ -6,4 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".PersonActivity">
 
+    <TextView
+        android:id="@+id/test_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="HELLO"
+        android:textAlignment="center"
+        android:textSize="20pt"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
