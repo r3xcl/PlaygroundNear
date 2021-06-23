@@ -3,18 +3,11 @@ package com.r3xcl.playgroundnear;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
-import androidx.navigation.ui.NavigationUI;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -76,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void ShowPersonActivity(){
 
-        Intent intent = new Intent(this,PersonActivity.class);
+        Intent intent = new Intent(this, AuthActivity.class);
         startActivityForResult(intent,1);
 
     }

@@ -16,9 +16,6 @@ import android.widget.TextView;
 public class SplashActivity extends AppCompatActivity {
 
     ImageView iv_logo;
-    TextView splash_text;
-
-    CharSequence charSequence;
 
     Handler handler=new Handler();
 
@@ -30,8 +27,6 @@ public class SplashActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         iv_logo = (ImageView)findViewById(R.id.iv_logo);
-        splash_text = (TextView) findViewById(R.id.splash_text);
-
 
         Animation animation = AnimationUtils.loadAnimation(this,R.anim.animation_splash);
         iv_logo.startAnimation(animation);
