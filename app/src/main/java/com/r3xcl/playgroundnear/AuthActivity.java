@@ -6,8 +6,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Vibrator;
+import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -38,6 +41,9 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
 
     private FirebaseAuth firebaseAuth;
 
+    public static final String SharedPrefName = "auth_shared_pref";
+
+    SharedPreferences sharedPreferences;
     Window window;
     FloatingActionButton fab_next;
     ImageView phone,ver_code;
@@ -52,7 +58,11 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
 
+        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
         getSupportActionBar().hide();
+
+        sharedPreferences = getSharedPreferences(SharedPrefName,Context.MODE_PRIVATE);
 
         fab_next = findViewById(R.id.fab_next);
         phone = findViewById(R.id.phone);
@@ -65,6 +75,14 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
 
         window = this.getWindow();
         window.setStatusBarColor(this.getResources().getColor(R.color.bar_auth));
+
+        String authcheck = sharedPreferences.getString("phonenum","");
+
+        if(!authcheck.isEmpty()){
+            Intent intent = new Intent(AuthActivity.this,PersonActivity.class);
+            finish();
+            startActivity(intent);
+        }
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -92,6 +110,8 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
         fab_next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                vibrator.vibrate(50);
 
                 phonenum = input_number.getText().toString().trim();
 
@@ -146,6 +166,9 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onSuccess(AuthResult authResult) {
                 Toast.makeText(AuthActivity.this,"Вход выполнен успешно!",Toast.LENGTH_SHORT).show();
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("phonenum",phonenum);
+                editor.apply();
                 Intent intent = new Intent(AuthActivity.this,PersonActivity.class);
                 finish();
                 startActivityForResult(intent,1);
@@ -194,11 +217,15 @@ public class AuthActivity extends AppCompatActivity implements View.OnClickListe
     private void hideKeyboard() {
         InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0);
+        input_number.clearFocus();
+        input_code.clearFocus();
     }
 
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     public boolean dispatchTouchEvent(MotionEvent ev) {
+        input_number.clearFocus();
+        input_code.clearFocus();
         if (ev.getAction() == MotionEvent.ACTION_DOWN)
             hideKeyboard();
         return super.dispatchTouchEvent(ev);
