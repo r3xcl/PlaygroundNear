@@ -14,4 +14,5 @@
     <color name="back_auth">#aab4b7</color>
     <color name="blue_ice">#b6c9f0</color>
     <color name="dark_gray">#a9a9a9</color>
+    <color name="bar_auth">#3e5678</color>
 </resources>
