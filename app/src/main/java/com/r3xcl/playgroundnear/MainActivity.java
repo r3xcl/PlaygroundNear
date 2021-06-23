@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bottomNavigationView.getMenu().getItem(1).setEnabled(false);
 
         fab_add_court = findViewById(R.id.fab_add_court);
-        fab_add_court.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.white)));
+        fab_add_court.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.color_nav_bar)));
 
         window = this.getWindow();
         window.setStatusBarColor(this.getResources().getColor(R.color.bar_color));
