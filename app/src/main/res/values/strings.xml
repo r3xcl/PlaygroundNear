@@ -13,4 +13,5 @@
     <string name="login_failed">"Login failed"</string>
     <string name="inputnum">+38</string>
     <string name="inputcode">12345</string>
+    <string name="exit">Выход</string>
 </resources>
