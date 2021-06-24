@@ -53,7 +53,7 @@ public class PersonActivity extends AppCompatActivity {
     }
 
     private void showExitDialog(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(PersonActivity.this,R.style.AlertDialogTheme);
+        AlertDialog.Builder builder = new AlertDialog.Builder(PersonActivity.this);
         View view = LayoutInflater.from(PersonActivity.this).inflate(R.layout.dialog_layout,
                 (ConstraintLayout)findViewById(R.id.dialog_layout_container));
         builder.setView(view);
