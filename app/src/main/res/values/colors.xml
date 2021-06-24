@@ -16,4 +16,5 @@
     <color name="dark_gray">#a9a9a9</color>
     <color name="bar_auth">#ff9178</color>
     <color name="peach_orange">#ffcc93</color>
+    <color name="red">#E40017</color>
 </resources>
