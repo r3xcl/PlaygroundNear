@@ -6,6 +6,8 @@
         <entry key="app/src/main/res/layout/activity_auth.xml" value="0.2298166834655211" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_maps.xml" value="0.23958333333333334" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.23641304347826086" />
+        <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.27546296296296297" />
       </map>
     </option>
   </component>
