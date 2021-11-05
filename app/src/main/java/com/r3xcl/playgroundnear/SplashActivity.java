@@ -28,10 +28,6 @@ public class SplashActivity extends AppCompatActivity {
 
         iv_logo = (ImageView)findViewById(R.id.iv_logo);
 
-        Animation animation = AnimationUtils.loadAnimation(this,R.anim.animation_splash);
-        iv_logo.startAnimation(animation);
-
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -40,7 +36,7 @@ public class SplashActivity extends AppCompatActivity {
                 finish();
 
             }
-        },3100);
+        },1000);
 
 
     }
